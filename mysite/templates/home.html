@@ -1,0 +1,18 @@
+{% if user.is_authenticated %}
+	
+Hi {{ user.full_name }}, Welcome to Peer-2-Peer!
+
+
+	
+<a href="{% url 'logout' %}">Log Out</a>
+
+
+{% else %}
+	
+You are not logged in!
+
+
+<a href="{% url 'login' %}">Log In</a>
+<a href="{% url 'register' %}">Sign Up</a>
+
+{% endif %}
