@@ -1,20 +1,22 @@
-{% csrf_token %}
+<a href="{% url 'home' %}">Home</a> / 
+<a href="{% url 'login' %}">Login</a>
+
+<h2>Register</h2>
+<form method="POST" action="">
+
+	{% csrf_token %}
 	{% for field in form %}
-	
-
-		{{ field.label_tag }}
-
+	<p>
+		{{ field.label_tag }}<br>
 		{{ field }}
 		{% if field.help_text %}
-			{{ field.help_text }}
+			<small style="color: green">{{ field.help_text }}</small>
 		{% endif %}
 		{% for error in field.errors %}
-			
-
-{{ error }}
-
-
+			</p><p style="color: red">{{ error }}</p>
 		{% endfor %}
-	
-
+	<p></p>
 	{% endfor %}
+	<!--- <button type="submit">Sign up</button> --->
+	<input type="submit" value="Create Account"  />
+</form>
