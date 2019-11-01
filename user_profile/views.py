@@ -1,12 +1,12 @@
 from django.shortcuts import render, redirect, reverse
 from django.contrib.auth.decorators import login_required
-from .forms import EditProfile, ViewProfile
+from .forms import UserUpdateForm #,EditProfile, ViewProfile
 from register.models import CustomUser
 
-# Create your views here.
+from django.contrib import messages
+#from django.contrib.auth.forms import UserCreationForm, UserChangeForm
 
-#def manage_profile(request):
-#    return render(request, 'manage_profile.html')
+# Create your views here.
 
 '''
 def view_profile(request):
@@ -33,6 +33,7 @@ def view_profile(request):
     }  
     return render(request, 'view_profile.html', context)
 
+'''
 def edit_profile(request):
     args = {}
 
@@ -47,3 +48,19 @@ def edit_profile(request):
 
     args['form'] = form
     return render(request, 'edit_profile.html', args)
+'''
+
+def edit_profile(request, slug=None):
+    user = request.user
+    if request.method == 'POST':
+        form = UserUpdateForm(request.POST, instance=user)
+        if form.is_valid():
+            user = form.save()
+            messages.success(request, 'Success!')
+            return redirect(reverse('view_profile'))
+    else:
+        form = UserUpdateForm(instance=user)
+    context = {
+        'form': form,
+    }
+    return render(request, 'edit_profile.html', context) 

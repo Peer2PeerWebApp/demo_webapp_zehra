@@ -5,8 +5,8 @@ from .models import CustomUser
 
 
 class SignUpForm(UserCreationForm):
-    is_tutee = forms.BooleanField(help_text='Select if you want to be a tutee.')
-    is_tutor = forms.BooleanField(help_text='Select if you want to be a tutor.')
+    is_tutee = forms.BooleanField(help_text='Select if you want to be a tutee.', required=False)
+    is_tutor = forms.BooleanField(help_text='Select if you want to be a tutor.', required=False)
 
     class Meta:
         model = CustomUser

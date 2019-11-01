@@ -1,7 +1,7 @@
 <a href="{% url 'home' %}">Home</a> / 
 <a href="{% url 'logout' %}">Logout</a>
 
-<h2>View Profile</h2>
+<h2>Edit Profile</h2>
 <form method="POST" action="">
 
 	{% csrf_token %}
@@ -17,6 +17,5 @@
 		{% endfor %}
 	<p></p>
 	{% endfor %}
-	<!--- <button type="submit">Sign up</button> --->
 	<input type="submit" value="Save Changes"  />
 </form>
