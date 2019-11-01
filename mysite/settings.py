@@ -37,8 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    #'newapp',
-    'register'
+    'register',
+    'profile'
     
 ]
 
@@ -59,7 +59,9 @@ TEMPLATES = [
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': ['mysite/templates',
                  os.path.join(BASE_DIR, 'templates'),
-                 os.path.join(BASE_DIR, 'register', 'templates', 'register')],
+                 os.path.join(BASE_DIR, 'register', 'templates', 'register'),
+                os.path.join(BASE_DIR, 'user_profile', 'templates'),
+                ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
