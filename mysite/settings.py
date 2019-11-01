@@ -25,7 +25,7 @@ SECRET_KEY = '3re9q0n5+5cp4q!0)=@ncyzmi^cggsz%5ova$$tx%0-ese0jar'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1', 'localhost']
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost']  
 
 
 # Application definition
@@ -38,7 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'register',
-    'profile'
+    'profile',
     
 ]
 
@@ -58,8 +58,8 @@ TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': ['mysite/templates',
-                 os.path.join(BASE_DIR, 'templates'),
-                 os.path.join(BASE_DIR, 'register', 'templates', 'register'),
+                os.path.join(BASE_DIR, 'templates'),
+                #os.path.join(BASE_DIR, 'register', 'templates', 'register'),
                 os.path.join(BASE_DIR, 'user_profile', 'templates'),
                 ],
         'APP_DIRS': True,

@@ -2,21 +2,13 @@
 <a href="{% url 'logout' %}">Logout</a>
 
 <h2>View Profile</h2>
-<form method="POST" action="">
 
-	{% csrf_token %}
-	{% for field in form %}
-	<p>
-		{{ field.label_tag }}<br>
-		{{ field }}
-		{% if field.help_text %}
-			<small style="color: green">{{ field.help_text }}</small>
-		{% endif %}
-		{% for error in field.errors %}
-			</p><p style="color: red">{{ error }}</p>
-		{% endfor %}
-	<p></p>
-	{% endfor %}
-	<!--- <button type="submit">Sign up</button> --->
-	<input type="submit" value="Save Changes"  />
-</form>
+<br>First name: {{user.first_name}}
+<br>Last name: {{user.last_name}}
+<br>Username: {{user.username}}
+<br>Email: {{user.email}}
+<br>Is tutee?: {{user.is_tutee|yesno:"✔,✘"}}
+<br>Is tutor?: {{user.is_tutee|yesno:"✔,✘"}}
+<br></br>
+
+<a href="{% url 'edit_profile' %}">Edit Profile</a>

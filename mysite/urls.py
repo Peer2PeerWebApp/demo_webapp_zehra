@@ -21,7 +21,7 @@ from register import views as reg_v
 from user_profile import views as prof_v
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    #path('admin/', admin.site.urls),
     
     path('', reg_v.home, name='home'),
 
@@ -30,5 +30,6 @@ urlpatterns = [
     path('register/', reg_v.register, name='register'),
 
     path('view_profile/', prof_v.view_profile, name='view_profile'),
+    path('edit_profile/', prof_v.edit_profile, name='edit_profile'),
 
 ]

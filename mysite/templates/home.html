@@ -1,6 +1,6 @@
 {% if user.is_authenticated %}
 	
-Hi {{ user.full_name }}, Welcome to Peer-2-Peer!
+Hi {{ user.first_name }}, Welcome to Peer-2-Peer!
 
 <a href="{% url 'view_profile' %}">View & Edit Profile</a>
 
