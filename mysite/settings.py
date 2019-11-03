@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'register',
     'user_profile',
+    'tutors'
     
 ]
 
@@ -61,6 +62,7 @@ TEMPLATES = [
                 os.path.join(BASE_DIR, 'templates'),
                 #os.path.join(BASE_DIR, 'register', 'templates', 'register'),
                 os.path.join(BASE_DIR, 'user_profile', 'templates'),
+                os.path.join(BASE_DIR, 'tutors', 'templates'),
                 ],
         'APP_DIRS': True,
         'OPTIONS': {

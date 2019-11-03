@@ -19,6 +19,7 @@ from django.contrib.auth import views as auth_views
 
 from register import views as reg_v
 from user_profile import views as prof_v
+from tutors import views as tutors_v
 
 urlpatterns = [
     #path('admin/', admin.site.urls),
@@ -31,5 +32,6 @@ urlpatterns = [
 
     path('view_profile/', prof_v.view_profile, name='view_profile'),
     path('edit_profile/', prof_v.edit_profile, name='edit_profile'),
+    path('tutors/', tutors_v.tutors_list, name='tutors_list'),
 
 ]
