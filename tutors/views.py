@@ -9,3 +9,10 @@ def tutors_list(request):
         'user_list': user_list
     }  
     return render(request, 'tutors_list.html', context)
+
+def show_profile( request, user):
+    user = CustomUser.objects.get(username = user)
+    context = {
+        'user': user
+    }  
+    return render(request, 'show_profile.html', context)

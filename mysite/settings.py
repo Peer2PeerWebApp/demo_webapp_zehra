@@ -37,9 +37,13 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    
     'register',
     'user_profile',
-    'tutors'
+    'tutors',
+
+    'django_messages',
+    'django.contrib.sites',
     
 ]
 
@@ -95,9 +99,9 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'p2p',
-        'USER': 'channigreenwall',
-        'PASSWORD': 'p2p',
-        'HOST': '127.0.0.1',
+        'USER': 'zehra',
+        'PASSWORD': 'zehranur',
+        'HOST': 'localhost',
         'PORT': '5432',
     }
 }
