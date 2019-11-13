@@ -12,8 +12,9 @@
     <thead>
         <tr><th>Senderrrr</th><th>Subject</th><th>Received</th><th>Action</th></tr>
     </thead>
+
     <tbody>
-{% for message in message_list %}
+    {% for message in message_list %}
     <tr>
         <td>{{ message.sender }}</td>
         <td>
@@ -25,10 +26,12 @@
         <td>{{ message.sent_at|date:_("DATETIME_FORMAT") }}</td>
         <td><a href="{% url 'messages_delete' message.id %}">delete</a></td>
     </tr>
-{% endfor %}
+    {% endfor %}
     </tbody>
 </table>
+
 {% else %}
 <p>No messages.</p>
 {% endif %}
+
 {% endblock %}

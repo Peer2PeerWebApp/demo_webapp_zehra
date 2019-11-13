@@ -8,6 +8,6 @@ the following contents:{% endblocktrans %}
 {{ message.body|safe }}
 
 --
-{% blocktrans %}Sent from {{ site_url }}{% endblocktrans %}
-{% trans "Inbox" %}: {{ site_url }}{% url 'messages_inbox' %}
-{% trans "Reply" %}: {{ site_url }}{% url 'messages_reply' message.pk %}
+Sent from {{ site_url }}
+Inbox: {{ site_url }}{% url 'messages_inbox' %}
+Reply: {{ site_url }}{% url 'messages_reply' message.pk %}
