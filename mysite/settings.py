@@ -64,9 +64,10 @@ TEMPLATES = [
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': ['mysite/templates',
                 os.path.join(BASE_DIR, 'templates'),
-                #os.path.join(BASE_DIR, 'register', 'templates', 'register'),
                 os.path.join(BASE_DIR, 'user_profile', 'templates'),
                 os.path.join(BASE_DIR, 'tutors', 'templates'),
+                os.path.join(BASE_DIR, 'templates', 'django_messages'),
+                os.path.join(BASE_DIR, 'mysite', 'templates', 'django_messages'),
                 ],
         'APP_DIRS': True,
         'OPTIONS': {
@@ -99,8 +100,8 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'p2p',
-        'USER': 'channigreenwall',
-        'PASSWORD': 'p2p',
+        'USER': 'zehra',
+        'PASSWORD': 'zehranur',
         'HOST': '127.0.0.1',
         'PORT': '5432',
     }

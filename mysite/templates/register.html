@@ -1,70 +1,10 @@
-<style>
-		* {
-		  box-sizing: border-box;
-		}
-		
-		body {
-		  margin: 0;
-		}
-		
-		/* Style the header */
-		.header {
-		  background-color: #00FFFF;
-		  font-style: italic;
-		  font-family: courier;
-		  padding: 20px;
-		  text-align: center;
-		}
-		
-		/* Style the top navigation bar */
-		.topnav {
-		  overflow: hidden;
-		  background-color: #333;
-		}
-		
-		/* Style the topnav links */
-		.topnav a {
-		  float: left;
-		  display: block;
-		  color: #f2f2f2;
-		  text-align: center;
-		  padding: 14px 16px;
-		  text-decoration: none;
-		}
-		
-		/* Change color on hover */
-		.topnav a:hover {
-		  background-color: #ddd;
-		  color: black;
-		}
-		/* Create three equal columns that floats next to each other */
-		.column {
-		float: left;
-		width: 33.33%;
-		padding: 15px;
-		}
+{% include "base.html" %}
+
+</head>
+<body>
+	{% block topnav %}{% endblock %}
 	
-		/* Clear floats after the columns */
-		.row:after {
-		content: "";
-		display: table;
-		clear: both;
-		}
-	
-		/* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
-		@media screen and (max-width:600px) {
-		.column {
-			width: 100%;
-		}
-		}
-		</style>
-		</head>
-		<body>
-		<div class="topnav">
-			<a href="{% url 'home' %}">Home</a>
-			<a href="{% url 'login' %}">Log In</a>
-			</div>
-	
+	{% block header %}
 		<div class="header">
 		  <h1>Register</h1>
 		  <form method="POST" action="">
@@ -82,8 +22,10 @@
 				<input type="submit" value="Create Account"  />
 			</form>
 		</div>
-	</body>
-	</html>
+	{% endblock %}
+	
+</body>
+</html>
 	
 	<!---was between {{ field }} and { for error in field.errors %} IF added in put endif in {} with % afer --> 
 

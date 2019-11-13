@@ -1,187 +1,41 @@
-{% if user.is_authenticated %}
-<style>
-    * {
-      box-sizing: border-box;
-    }
-    
-    body {
-      margin: 0;
-    }
-    
-    /* Style the header */
-    .header {
-      background-color: #00FFFF;
-      font-style: italic;
-      font-family: courier;
-      padding: 20px;
-      text-align: center;
-    }
-    
-    /* Style the top navigation bar */
-    .topnav {
-      overflow: hidden;
-      background-color: #333;
-    }
-    
-    /* Style the topnav links */
-    .topnav a {
-      float: left;
-      display: block;
-      color: #f2f2f2;
-      text-align: center;
-      padding: 14px 16px;
-      text-decoration: none;
-    }
-    
-    /* Change color on hover */
-    .topnav a:hover {
-      background-color: #ddd;
-      color: black;
-    }
-    /* Create three equal columns that floats next to each other */
-    .column {
-    float: left;
-    width: 33.33%;
-    padding: 15px;
-    text-align: center;
-    }
+{% include "base.html" %}
 
-    /* Clear floats after the columns */
-    .row:after {
-    content: "";
-    display: table;
-    clear: both;
-    text-align: center;
-    }
+<body>
 
-    /* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
-    @media screen and (max-width:600px) {
-    .column {
-        width: 100%;
-        text-align: center;
-    }
-    }
-    </style>
-    </head>
-    <body>
-    <div class="topnav">
-        <a href="{% url 'view_profile' %}">View & Edit Profile</a>
-        <a href="{% url 'tutors_list' %}">View Tutors</a>
-        <a href="{% url 'logout' %}">Log Out</a>
-        </div>
+{% block topnav %}{% endblock %}
 
+{% block header %}
     <div class="header">
       <h1>Peer-2-Peer</h1>
-      <p>Hi {{ user.first_name }}, Welcome to Peer-2-Peer!</p>
+      {% if user.is_authenticated %}
+          <p>Hi {{ user.first_name }}, Welcome to Peer-2-Peer!</p>
+      {% else %}
+          <p>You are not logged in!</p>
+      {% endif %}
     </div>
-    <div class="row">
-        <div class="column">
-          <h2>About</h2>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sit amet pretium urna. Vivamus venenatis velit nec neque ultricies, eget elementum magna tristique. Quisque vehicula, risus eget aliquam placerat, purus leo tincidunt eros, eget luctus quam orci in velit. Praesent scelerisque tortor sed accumsan convallis.</p>
-        </div>
-        
-        <div class="column">
-          <h2>Column</h2>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sit amet pretium urna. Vivamus venenatis velit nec neque ultricies, eget elementum magna tristique. Quisque vehicula, risus eget aliquam placerat, purus leo tincidunt eros, eget luctus quam orci in velit. Praesent scelerisque tortor sed accumsan convallis.</p>
-        </div>
-        
-        <div class="column">
-          <h2>Column</h2>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sit amet pretium urna. Vivamus venenatis velit nec neque ultricies, eget elementum magna tristique. Quisque vehicula, risus eget aliquam placerat, purus leo tincidunt eros, eget luctus quam orci in velit. Praesent scelerisque tortor sed accumsan convallis.</p>
-        </div>
-      </div>
-</body>
-</html>
-{% else %}
-<style>
-    * {
-      box-sizing: border-box;
-    }
-    
-    body {
-      margin: 0;
-    }
-    
-    /* Style the header */
-    .header {
-      background-color: #00FFFF;
-      font-style: italic;
-      font-family: courier;
-      padding: 20px;
-      text-align: center;
-    }
-    
-    /* Style the top navigation bar */
-    .topnav {
-      overflow: hidden;
-      background-color: #333;
-    }
-    
-    /* Style the topnav links */
-    .topnav a {
-      float: left;
-      display: block;
-      color: #f2f2f2;
-      text-align: center;
-      padding: 14px 16px;
-      text-decoration: none;
-    }
-    
-    /* Change color on hover */
-    .topnav a:hover {
-      background-color: #ddd;
-      color: black;
-    }
-    /* Create three equal columns that floats next to each other */
-    .column {
-    float: left;
-    padding: 10px;
-    background-color: #f1f1f1
-    text-align: center;
-    }
-    .column.side {
-        width: 25%;
-        text-align: center;
-    }
-    .column.middle {
-        width: 50%;
-        text-align: center;
-    }
-    /* Clear floats after the columns */
-    .row:after {
-    content: "";
-    display: table;
-    clear: both;
-    text-align: center;
-    }
+{% endblock %}
 
-    /* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
-    @media screen and (max-width:600px) {
-    .column.side, .column.middle {
-        width:100%;
-        text-align: center;
-    }
-    }
 
-    /* Style the footer */
-    .footer {
-        background-color: #EE82EE;
-        padding: 10px;
-        text-align: center;
-    }
-    </style>
-    </head>
-    <body>
-    <div class="topnav">
-        <a href="{% url 'login' %}">Log In</a>
-        <a href="{% url 'register' %}">Sign Up</a>
+{% block content %}
+    {% if user.is_authenticated %}
+        <div class="row">
+            <div class="column">
+              <h2>About</h2>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sit amet pretium urna. Vivamus venenatis velit nec neque ultricies, eget elementum magna tristique. Quisque vehicula, risus eget aliquam placerat, purus leo tincidunt eros, eget luctus quam orci in velit. Praesent scelerisque tortor sed accumsan convallis.</p>
+            </div>
+            
+            <div class="column">
+              <h2>Column</h2>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sit amet pretium urna. Vivamus venenatis velit nec neque ultricies, eget elementum magna tristique. Quisque vehicula, risus eget aliquam placerat, purus leo tincidunt eros, eget luctus quam orci in velit. Praesent scelerisque tortor sed accumsan convallis.</p>
+            </div>
+            
+            <div class="column">
+              <h2>Column</h2>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sit amet pretium urna. Vivamus venenatis velit nec neque ultricies, eget elementum magna tristique. Quisque vehicula, risus eget aliquam placerat, purus leo tincidunt eros, eget luctus quam orci in velit. Praesent scelerisque tortor sed accumsan convallis.</p>
+            </div>
         </div>
-
-    <div class="header">
-      <h1>Peer-2-Peer</h1>
-      <p>You are not logged in!</p>
-    </div>
-    <div class="row">
+    {% else %}
+        <div class="row">
             <div class="column side">
               <h2>Classes</h2>
               <p>
@@ -192,34 +46,39 @@
                   <p>Software Engineering</p>
                   <p>Chemistry</p>
                   <p>Network Security</p>
-              </marquee>
+                </marquee>
               </p>
             </div>
-    <div class="row">
-        <div class="column middle">
-          <h2>Why We Are Here</h2>
-          <p>In modern day academia, students are often found in desperate need of help in certain subjects.  Even with the help of TA/professor office hours, this sometimes is simply not enough.  On the flip side, some students may be found in a financial struggle when in university and have trouble coming across any jobs that can match their busy schedules.  Our motivation is to help solve both of these issues.  Our project Peer-2-Peer is an online tutoring platform “for students by students”. Our mission aims to create a more simplistic and idealistic platform for students of all universities.</p>
+            <div class="column middle">
+              <h2>Why We Are Here</h2>
+              <p>In modern day academia, students are often found in desperate need of help in certain subjects.  Even with the help of TA/professor office hours, this sometimes is simply not enough.  On the flip side, some students may be found in a financial struggle when in university and have trouble coming across any jobs that can match their busy schedules.  Our motivation is to help solve both of these issues.  Our project Peer-2-Peer is an online tutoring platform “for students by students”. Our mission aims to create a more simplistic and idealistic platform for students of all universities.</p>
+            </div>
+            <div class="column side">
+                <h2>Schools</h2>
+                <p>
+                  <marquee width="40%" direction="up" height="30%">
+                    <p>New York University</p>
+                    <p>Tufts College</p>
+                    <p>Columbia University</p>
+                    <p>The New School</p>
+                    <p>Northeastern Univerity</p>
+                    <p>Swarthmore College</p>
+                </marquee>
+                </p>
+            </div>
         </div>
-    <div class="row">
-        <div class="column side">
-            <h2>Schools</h2>
-            <p>
-              <marquee width="40%" direction="up" height="30%">
-                <p>New York University</p>
-                <p>Tufts College</p>
-                <p>Columbia University</p>
-                <p>The New School</p>
-                <p>Northeastern Univerity</p>
-                <p>Swarthmore College</p>
-            </marquee>
-            </p>
-         </div>
-    </div>
-    <div class="footer">
-        <h3>Take Control of Your Academics</h3>
-            <p>One step closer to that A!!!</p>
-        </div>
-    
+    {% endif %}
+  {% endblock %}
+
+
+  {% block footer %}
+      {% if user.is_authenticated %}
+      {% else %}
+          <div class="footer">
+              <h3>Take Control of Your Academics</h3>
+              <p>One step closer to that A!!!</p>
+          </div>
+      {% endif %}
+  {% endblock %}
+
 </body>
-</html>	
-{% endif %}

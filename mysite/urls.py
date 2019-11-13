@@ -17,10 +17,12 @@ from django.contrib import admin
 from django.urls import path, include
 from django.contrib.auth import views as auth_views
 
+#apps
 from register import views as reg_v
 from user_profile import views as prof_v
 from tutors import views as tutors_v
 
+#framework
 from django_messages import views as messages_v
 
 
@@ -40,11 +42,12 @@ urlpatterns = [
     path('show_profile/<user>/', tutors_v.show_profile, name='show_profile'),
 
     #path('messages/', include('postman.urls')),
-    path('messages/', include('django_messages.urls')),
+    
+    path('depr_messages/', include('django_messages.urls')),
 
-    path('inbox/', messages_v.inbox, {'template_name': 'my_inbox.html',}, name='messages_inbox'),
-    path('compose/', messages_v.compose, {'template_name': 'my_compose.html',}, name='messages_compose'),
-    path('outbox/', messages_v.outbox, {'template_name': 'my_outbox.html',}, name='messages_outbox'),
-    path('trash/', messages_v.trash, {'template_name': 'my_trash.html',}, name='messages_trash')
+    path('messages/inbox/', messages_v.inbox, {'template_name': 'my_inbox.html',}, name='messages_inbox'),
+    path('messages/compose/', messages_v.compose, {'template_name': 'my_compose.html',}, name='messages_compose'),
+    path('messages/outbox/', messages_v.outbox, {'template_name': 'my_outbox.html',}, name='messages_outbox'),
+    path('messages/trash/', messages_v.trash, {'template_name': 'my_trash.html',}, name='messages_trash')
 
 ]
