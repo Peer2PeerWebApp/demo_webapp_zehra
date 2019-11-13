@@ -43,6 +43,7 @@
     float: left;
     width: 33.33%;
     padding: 15px;
+    text-align: center;
     }
 
     /* Clear floats after the columns */
@@ -50,12 +51,14 @@
     content: "";
     display: table;
     clear: both;
+    text-align: center;
     }
 
     /* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
     @media screen and (max-width:600px) {
     .column {
         width: 100%;
+        text-align: center;
     }
     }
     </style>
@@ -134,24 +137,29 @@
     float: left;
     padding: 10px;
     background-color: #f1f1f1
+    text-align: center;
     }
     .column.side {
         width: 25%;
+        text-align: center;
     }
     .column.middle {
         width: 50%;
+        text-align: center;
     }
     /* Clear floats after the columns */
     .row:after {
     content: "";
     display: table;
     clear: both;
+    text-align: center;
     }
 
     /* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
     @media screen and (max-width:600px) {
     .column.side, .column.middle {
         width:100%;
+        text-align: center;
     }
     }
 
@@ -175,8 +183,17 @@
     </div>
     <div class="row">
             <div class="column side">
-              <h2>Side1</h2>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit..</p>
+              <h2>Classes</h2>
+              <p>
+                <marquee width="40%" direction="up" height="30%">
+                  <p>Object Oriented Programming</p>
+                  <p>Java</p>
+                  <p>Physics</p>
+                  <p>Software Engineering</p>
+                  <p>Chemistry</p>
+                  <p>Network Security</p>
+              </marquee>
+              </p>
             </div>
     <div class="row">
         <div class="column middle">
@@ -185,8 +202,17 @@
         </div>
     <div class="row">
         <div class="column side">
-            <h2>Side2</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit..</p>
+            <h2>Schools</h2>
+            <p>
+              <marquee width="40%" direction="up" height="30%">
+                <p>New York University</p>
+                <p>Tufts College</p>
+                <p>Columbia University</p>
+                <p>The New School</p>
+                <p>Northeastern Univerity</p>
+                <p>Swarthmore College</p>
+            </marquee>
+            </p>
          </div>
     </div>
     <div class="footer">
