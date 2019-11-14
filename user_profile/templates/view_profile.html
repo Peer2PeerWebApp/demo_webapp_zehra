@@ -5,21 +5,45 @@
 
 {% block header %}
     <div class="header">
-        <h2>View Profile</h2>
+        <h2>Hello, {{user.first_name}} {{user.last_name}}.</h2>
     </div>
 {% endblock %}
 
 
 {% block content %}
-    <br>First name: {{user.first_name}}
-    <br>Last name: {{user.last_name}}
-    <br>Username: {{user.username}}
-    <br>Email: {{user.email}}
-    <br>Is tutee?: {{user.is_tutee|yesno:"✔,✘"}}
-    <br>Is tutor?: {{user.is_tutor|yesno:"✔,✘"}}
-    <br></br>
+    
+    <div class="column">
+        {% if user.is_tutor %}
+        <h2>Courses you tutor:</h2>
+        <p>~List them here~</p>
+        <a>~Add link to edit courses taught here~</a>
+        {% else %}
+        <h4>For tutors eyes only!</h4>
+        {% endif %}
+    </div>
+    
+    <div class="column">
+        <h2>Your Profile:</h2>
+        <p>~List them here~</p>
+        <p>First name: {{user.first_name}}</p>
+        <p>Last name: {{user.last_name}}</p>
+        <p>Username: {{user.username}}</p>
+        <p>Email: {{user.email}}</p>
+        <p>Is tutee?: {{user.is_tutee|yesno:"✔,✘"}}</p>
+        <p>Is tutor?: {{user.is_tutor|yesno:"✔,✘"}}</p>
 
-    <a href="{% url 'edit_profile' %}">Edit Profile</a>
+        <a href="{% url 'edit_profile' %}">Edit Profile</a>
+    </div>
+
+    <div class="column">
+        {% if user.is_tutee %}
+        <h2>Your courses:</h2>
+        <p>~List them here~</p>
+        <a>~Add link to edit courses taught here~</a>
+        {% else %}
+        <h4>For tutees eyes only!</h4>
+        {% endif %}
+      </div>
 
 {% endblock %}
 
