@@ -48,6 +48,7 @@ urlpatterns = [
     path('messages/inbox/', messages_v.inbox, {'template_name': 'my_inbox.html',}, name='messages_inbox'),
     path('messages/compose/', messages_v.compose, {'template_name': 'my_compose.html',}, name='messages_compose'),
     path('messages/outbox/', messages_v.outbox, {'template_name': 'my_outbox.html',}, name='messages_outbox'),
-    path('messages/trash/', messages_v.trash, {'template_name': 'my_trash.html',}, name='messages_trash')
+    path('messages/trash/', messages_v.trash, {'template_name': 'my_trash.html',}, name='messages_trash'),
+    path('messages/view/<message_id>/', messages_v.view, {'template_name': 'my_view.html',}, name='messages_view')
 
 ]
