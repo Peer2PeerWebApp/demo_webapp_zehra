@@ -1,0 +1,40 @@
+{% include "base.html" %}
+
+</head>
+<body>
+
+{% block header %}
+    <div class="header">
+        <h2>Edit Courses</h2>
+    </div>
+{% endblock %}
+
+
+{% block content %}
+<div class="header">
+    <h2>List of Courses</h2>
+</div>
+
+
+<table style="width:50%">
+  <tr>
+    <th>Course Name</th>
+    <th>Are you a tutor?</th>
+  </tr>
+  
+{% for course in course_list %}
+<form method="POST" action="">
+{% csrf_token %}
+    <tr>
+        <td>{{ course.course_name }}</td>
+        <td><input type="checkbox" id="is_teaching" value="1"></td>
+    </tr>
+{% endfor %}
+
+</table>
+
+<input type="submit" value="Save Changes"/>
+
+{% endblock %}
+
+</body>
