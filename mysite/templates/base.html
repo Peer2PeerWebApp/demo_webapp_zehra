@@ -10,7 +10,7 @@
     
     /* Style the header */
     .header {
-        background-color: #00FFFF;
+        background-color: lightblue;
         font-style: italic;
         font-family: courier;
         padding: 20px;
@@ -67,6 +67,27 @@
         padding: 10px;
         text-align: center;
     }
+      /* Style the top navigation bar */
+      .topnav1 {
+        overflow: hidden;
+        background-color: #f1f1f1
+    }
+    
+    /* Style the topnav links */
+    .topnav1 a {
+        float: left;
+        display: block;
+        color: black;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+    }
+    
+    /* Change color on hover */
+    .topnav1 a:hover {
+        background-color: #ddd;
+        color: black;
+    }
 </style>
 
 <body>
@@ -88,13 +109,14 @@
     {% endblock %}
 
     {% block header %}{% endblock %}
-
+    {% block topnav1 %}{% endblock %}
+   
     {% block content %}
     {% block object-tools %}{% endblock %}
     {{ content }}
     {% endblock %}
 
-    {% block sidebar %}{% endblock %}
+   
 
     {% block footer %}{% endblock %}
 
