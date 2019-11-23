@@ -5,6 +5,7 @@
 {% block topnav %}{% endblock %}
 
 {% block header %}
+
     <div class="header">
       <h3>Peer-2-Peer</h3>
       {% if user.is_authenticated %}
@@ -20,20 +21,49 @@
     {% if user.is_authenticated %}
         <div class="row">
             <div class="column">
-              <h2>About</h2>
-              <p>Maybe list all courses available here...</p>
+              <h2>Classes</h2>
+              <p>
+                <marquee width="40%" direction="up" height="30%">
+                  <p>Object Oriented Programming</p>
+                  <p>Java</p>
+                  <p>Physics</p>
+                  <p>Software Engineering</p>
+                  <p>Chemistry</p>
+                  <p>Network Security</p>
+                </marquee>
+              </p>
+            </div>
+            
+            <div class="column" >
+            
+              <h2>Checklist</h2>
+              
+              <p color:pink>
+                
+                  <p>Set Up Profile</p>
+                  <p>Navigate Tutor Portal</p>
+                  <p>Message Peer Tutor</p>
+                  <p>Begin Tutoring</p>
+                  <p>Get that A!!</p>
+                
+              </p>
             </div>
             
             <div class="column">
-              <h2>Column</h2>
-              <p>Maybe display if there are new messages here, and link to inbox if so...</p>
+                <h2>Tutors</h2>
+                <p>
+                  <marquee width="40%" direction="up" height="30%">
+                    <p>Object Oriented Programming</p>
+                    <p>Java</p>
+                    <p>Physics</p>
+                    <p>Software Engineering</p>
+                    <p>Chemistry</p>
+                    <p>Network Security</p>
+                  </marquee>
+                </p>
             </div>
-            
-            <div class="column">
-              <h2>Column</h2>
-              <p>Maybe list all the newest members here...</p>
-            </div>
-        </div>
+          </div>
+        
     {% else %}
         <div class="row">
             <div class="column side">
@@ -67,18 +97,18 @@
                 </p>
             </div>
         </div>
+      
     {% endif %}
   {% endblock %}
 
 
   {% block footer %}
-      {% if user.is_authenticated %}
-      {% else %}
+   
           <div class="footer">
               <h3>Take Control of Your Academics</h3>
               <p>One step closer to that A!!!</p>
           </div>
-      {% endif %}
+  
   {% endblock %}
 
 </body>
