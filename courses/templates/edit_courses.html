@@ -11,10 +11,6 @@
 
 
 {% block content %}
-<div class="header">
-    <h2>List of Courses</h2>
-</div>
-
 
 <table style="width:50%">
   <tr>
@@ -27,7 +23,7 @@
 {% csrf_token %}
     <tr>
         <td>{{ course.course_name }}</td>
-        <td><input type="checkbox" id="is_teaching" value="1"></td>
+        <td><input type="checkbox" id="is_teaching" value="course.id"></td>
     </tr>
 {% endfor %}
 

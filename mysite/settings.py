@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'register',
     'user_profile',
     'tutors',
+    'courses',
 
     'django_messages',
     'django.contrib.sites',
@@ -100,8 +101,8 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'p2p',
-        'USER': 'channigreenwall',
-        'PASSWORD': 'p2p',
+        'USER': 'zehra',
+        'PASSWORD': 'zehranur',
         'HOST': '127.0.0.1',
         'PORT': '5432',
     }
